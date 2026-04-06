@@ -8,7 +8,7 @@ import { Directors } from "../components/Directors.jsx";
 import { InfoSection } from "../components/InfoSection.jsx";
 import { Partners } from "../components/Partners.jsx";
 import { ProcessSection } from "../components/ProcessSection.jsx";
-import { Funders } from "../components/funders.jsx";
+import {Funders} from "../components/Funders.jsx"
 import { Leaders } from "../components/Leaders.jsx";
 
 const Home = () => {
