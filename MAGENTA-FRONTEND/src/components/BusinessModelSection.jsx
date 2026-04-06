@@ -5,14 +5,14 @@ const BusinessModelSection = () => {
   return (
     <section
       className="py-20"
-      data-aos="fade-up"
+      data-aos="zoom-in"
       data-aos-duration="1000"
     >
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 items-center gap-10">
 
           {/* ================= LEFT CONTENT ================= */}
-          <div data-aos="fade-up" data-aos-delay="200">
+          <div data-aos="zoom-in" data-aos-delay="200">
             
             {/* Heading */}
             <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-gray-900">
@@ -74,7 +74,7 @@ const BusinessModelSection = () => {
           </div>
 
           {/* ================= RIGHT IMAGE ================= */}
-          <div data-aos="fade-up" data-aos-delay="300">
+          <div data-aos="zoom-in" data-aos-delay="300">
             <img
               src="/assets/images/businessmodel/businessmodel1.jpg" 
               alt="Business Model"

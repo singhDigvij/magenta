@@ -43,7 +43,7 @@ const AboutSection = () => {
           {/* Left Big Image */}
           <div
             className="lg:col-span-8"
-            data-aos="fade-up"
+            data-aos="zoom-in"
             data-aos-delay="200"
             data-aos-duration="1000"
             data-aos-offset="300"
@@ -60,7 +60,7 @@ const AboutSection = () => {
           {/* Right Small Image */}
           <div
             className="lg:col-span-4"
-            data-aos="fade-up"
+            data-aos="zoom-in"
             data-aos-delay="200"
             data-aos-duration="1000"
             data-aos-offset="300"
@@ -81,8 +81,8 @@ const AboutSection = () => {
             <div
               key={step.id}
               className="flex gap-4 items-start"
-              data-aos="fade-up"
-              data-aos-delay={index * 200} // 👈 stagger effect
+              data-aos="zoom-in"
+             data-aos-delay="200"
               data-aos-duration="1000"
               data-aos-offset="200"
             >

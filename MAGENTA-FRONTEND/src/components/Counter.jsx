@@ -1,12 +1,6 @@
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-
-const counters = [
-  { label: "Clients", value: 5137 },
-  { label: "Branches", value: 8 },
-  { label: "Districts", value: 8 },
-  { label: "Portfolio", value: 9, suffix: " Crore" },
-];
+import { getCounters } from "../api/counterApi.js";
 
 const Counter = () => {
   const { ref, inView } = useInView({
@@ -14,12 +8,41 @@ const Counter = () => {
     threshold: 0.3,
   });
 
-  const [counts, setCounts] = useState(counters.map(() => 0));
+  const [data, setData] = useState([]);
+  const [counts, setCounts] = useState([]);
 
+  // 🔥 Fetch from backend
   useEffect(() => {
-    if (!inView) return;
+    const fetchData = async () => {
+      try {
+        const result = await getCounters();
 
-    counters.forEach((item, index) => {
+        const formatted = [
+          { label: "Clients", value: Number(result[1]) },
+          { label: "Branches", value: Number(result[0]) },
+          { label: "Districts", value: Number(result[2]) },
+          {
+            label: "Portfolio",
+            value: parseFloat(result[3]), // number for animation
+            suffix: " Crore", // keep UI same
+          },
+        ];
+
+        setData(formatted);
+        setCounts(formatted.map(() => 0));
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // 🔥 Counter Animation
+  useEffect(() => {
+    if (!inView || data.length === 0) return;
+
+    data.forEach((item, index) => {
       let start = 0;
       const end = item.value;
       const duration = 2000;
@@ -39,7 +62,7 @@ const Counter = () => {
         if (start >= end) clearInterval(timer);
       }, incrementTime);
     });
-  }, [inView]);
+  }, [inView, data]);
 
   return (
     <section className="py-10">
@@ -47,10 +70,10 @@ const Counter = () => {
         ref={ref}
         className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0"
       >
-        {counters.map((item, index) => (
+        {data.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col items-center justify-center py-12 transition duration-300 group  cursor-pointer"
+            className="flex flex-col items-center justify-center py-12 transition duration-300 group cursor-pointer"
           >
             {/* Label */}
             <p className="text-sm uppercase tracking-wide text-gray-500 group-hover:text-pink-600 transition">
@@ -59,7 +82,7 @@ const Counter = () => {
 
             {/* Value */}
             <h2 className="text-4xl md:text-5xl font-bold text-gray-400 mt-4 group-hover:text-pink-600 transition">
-              {counts[index].toLocaleString()}
+              {counts[index]?.toLocaleString()}
               {item.suffix && (
                 <span className="text-3xl ml-1">
                   {item.suffix}
@@ -73,4 +96,4 @@ const Counter = () => {
   );
 };
 
-export {Counter}
+export { Counter };

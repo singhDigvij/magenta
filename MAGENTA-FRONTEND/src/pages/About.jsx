@@ -42,7 +42,7 @@ const About = () => {
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
-          data-aos="fade-up"
+          data-aos="zoom-in"
         >
           <div className="absolute inset-0 bg-black/50"></div>
 
@@ -69,7 +69,7 @@ const About = () => {
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
-          data-aos="fade-up"
+          data-aos="zoom-in"
         >
           <div className="absolute inset-0 bg-black/50"></div>
 
@@ -96,7 +96,7 @@ const About = () => {
             backgroundSize: "cover",
             backgroundPosition: "top",
           }}
-          data-aos="fade-up"
+          data-aos="zoom-in"
         >
           <div className="absolute inset-0 bg-black/50"></div>
 
