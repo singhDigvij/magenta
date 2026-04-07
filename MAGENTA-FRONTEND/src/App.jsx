@@ -12,6 +12,10 @@ import { Home } from "./pages/Home.jsx";
 import { About } from "./pages/About.jsx";
 import { Products } from "./pages/Products.jsx";
 import { BusinessModel } from "./pages/BusinessModel.jsx";
+import { Gallery } from "./pages/Gallery.jsx";
+import { Services } from "./pages/Services.jsx";
+import { Downloads } from "./pages/Downloads.jsx";
+import { Policies } from "./pages/Policies.jsx";
 // import { Operation } from "./pages/Operation.jsx";
 
 // import { Services } from "./pages/Services.jsx";
@@ -43,6 +47,10 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
             <Route path="/businessmodel" element={<BusinessModel />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/downloads" element={<Downloads />} />
+            <Route path="/policies" element={<Policies />} />
             {/* <Route path="/operations" element={<Operation />} /> */}
           </Routes>
         </div>

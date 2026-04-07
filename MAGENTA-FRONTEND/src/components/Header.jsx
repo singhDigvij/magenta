@@ -63,9 +63,9 @@ const Header = () => {
             </Link>
 
             {/* MIS Login */}
-            <a href="#" className="hover:text-pink-600">
+            {/* <a href="#" className="hover:text-pink-600">
               MIS Login
-            </a>
+            </a> */}
           </nav>
 
           {/* Right Side */}
@@ -73,7 +73,7 @@ const Header = () => {
             {/* Contact Button */}
             <button
               onClick={() => setIsContactOpen(true)}
-              className="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 text-sm font-semibold rounded transition"
+              className="bg-pink-600 hover:bg-pink-700 cursor-pointer text-white px-4 py-2 text-sm font-semibold rounded transition"
             >
               Contact Us
             </button>
@@ -153,13 +153,13 @@ const Header = () => {
             Policies
           </Link>
 
-          <a
+          {/* <a
             href="#"
             className="block hover:text-pink-600"
             onClick={() => setMenuOpen(false)}
           >
             MIS Login
-          </a>
+          </a> */}
         </div>
       )}
 

@@ -19,10 +19,12 @@ const steps = [
     description:
       "To make half a million poor families, who are out of the normal banking system in rural and semi-urban areas in India, financially independent",
   },
-  {
-    id: "04",
-    title: "Commitment.",
-    description: `Our Commitment to Financial Inclusion
+];
+
+const commitment = {
+  id: "04",
+  title: "Commitment.",
+  description: `Our Commitment to Financial Inclusion
 
 • Increase Outreach: The company aims to increase its outreach to reach more underserved communities and individuals. This goal may involve expanding its branch network, leveraging technology to reach remote areas, and developing partnerships with other organizations to extend its services.
 
@@ -37,8 +39,7 @@ const steps = [
 • Foster Social Impact: The company fosters social impact by promoting entrepreneurship, creating self-employment opportunities, and supporting small businesses. This may involve providing financial education and training, mentoring entrepreneurs, and facilitating access to markets.
 
 • Meet Regulatory Compliance: The company meets regulatory compliance requirements to ensure its operations are conducted within legal and ethical frameworks. This may involve maintaining accurate and transparent financial records, adhering to regulatory guidelines, and implementing effective compliance monitoring mechanisms.`,
-  },
-];
+};
 
 const AboutSection = () => {
   return (
@@ -94,8 +95,8 @@ const AboutSection = () => {
           </div>
         </div>
 
-        {/* Steps */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Steps (01–03) */}
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
           {steps.map((step) => (
             <div
               key={step.id}
@@ -105,20 +106,41 @@ const AboutSection = () => {
               data-aos-duration="1000"
               data-aos-offset="200"
             >
-              {/* Number */}
               <h2 className="text-4xl lg:text-5xl font-bold text-pink-600">
                 {step.id}.
               </h2>
 
-              {/* Content */}
               <div>
                 <h6 className="text-lg font-semibold mb-2">{step.title}</h6>
-                <p className="text-gray-600 text-md leading-relaxed whitespace-pre-line">
+                <p className="text-gray-600 text-md leading-relaxed">
                   {step.description}
                 </p>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Commitment (04 - FULL WIDTH) */}
+        <div className="grid md:grid-cols-3">
+          <div
+            className="md:col-span-3 flex gap-4 items-start"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+            data-aos-duration="1000"
+            data-aos-offset="200"
+          >
+            <h2 className="text-4xl lg:text-5xl font-bold text-pink-600">
+              {commitment.id}.
+            </h2>
+
+            <div>
+              <h6 className="text-lg font-semibold mb-2">{commitment.title}</h6>
+
+              <p className="text-gray-600 text-md leading-relaxed whitespace-pre-line">
+                {commitment.description}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
