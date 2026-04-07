@@ -2,18 +2,13 @@ import { Link } from "react-router-dom";
 
 const OperationSection = () => {
   return (
-    <section
-      className="py-20"
-      data-aos="zoom-in"
-      data-aos-duration="1000"
-    >
+    <section className="py-20">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 items-center gap-10">
-
           {/* Left Image */}
-          <div data-aos="zoom-in" data-aos-delay="200">
+          <div data-aos="fade-right" data-aos-delay="400">
             <img
-              src="/assets/images/operation/operation1.jpg" 
+              src="/assets/images/operation/operation1.jpg"
               alt="Operational Model"
               className="w-full h-auto rounded-lg object-cover"
             />
@@ -37,7 +32,6 @@ const OperationSection = () => {
               Know More
             </Link>
           </div>
-
         </div>
       </div>
     </section>

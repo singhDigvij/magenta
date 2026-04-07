@@ -17,7 +17,7 @@ const steps = [
     id: "03",
     title: "Objective.",
     description:
-      "To Make Half A Million Poor Families, Who Are Out Of The Normal Banking System In Rural, Urban And Semi-Urban Areas In India Financially Independent By 2023",
+      "To make half a million poor families, who are out of the normal banking system in rural and semi-urban areas in India, financially independent",
   },
 ];
 
@@ -61,7 +61,7 @@ const AboutSection = () => {
           <div
             className="lg:col-span-4"
             data-aos="zoom-in"
-            data-aos-delay="200"
+            data-aos-delay="400"
             data-aos-duration="1000"
             data-aos-offset="300"
           >
@@ -82,12 +82,12 @@ const AboutSection = () => {
               key={step.id}
               className="flex gap-4 items-start"
               data-aos="zoom-in"
-             data-aos-delay="200"
+              data-aos-delay="100"
               data-aos-duration="1000"
               data-aos-offset="200"
             >
               {/* Number */}
-              <h2 className="text-4xl lg:text-5xl font-bold text-red-600">
+              <h2 className="text-4xl lg:text-5xl font-bold text-pink-600">
                 {step.id}.
               </h2>
 

@@ -14,33 +14,36 @@ import { Products } from "./pages/Products.jsx";
 import { BusinessModel } from "./pages/BusinessModel.jsx";
 import { Operation } from "./pages/Operation.jsx";
 
-
-
 // import { Services } from "./pages/Services.jsx";
 // import { Downloads } from "./pages/Downloads.jsx";
 
 function App() {
-   useEffect(() => {
+  useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 1200,
       once: true,
-      offset: 100,
+      offset: 200,
+      easing: "ease-in-out",
+      delay: 0,
     });
+
+    AOS.refresh(); // 🔥 IMPORTANT
   }, []);
 
   return (
     <BrowserRouter>
       <div className="flex flex-col min-h-screen">
         <Header />
-        <ScrollToTop />
+        {/* <ScrollToTop /> */}
         {/* Main Content */}
         <div className="grow">
-          <Routes>{/* Add routes later */}
-             <Route path="/" element={<Home />} />
-             <Route path="/about" element={<About />} />
-             <Route path="/products" element={<Products />} />
-             <Route path="/businessmodel" element={<BusinessModel />} />
-             <Route path="/operations" element={<Operation />} />
+          <Routes>
+            {/* Add routes later */}
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/businessmodel" element={<BusinessModel />} />
+            <Route path="/operations" element={<Operation />} />
           </Routes>
         </div>
 

@@ -2,14 +2,9 @@ import { Link } from "react-router-dom";
 
 const ProductSection = () => {
   return (
-    <section
-      className="py-20"
-      data-aos="zoom-in"
-      data-aos-duration="1000"
-    >
+    <section className="py-20">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 items-center gap-10">
-
           {/* Left Image */}
           <div data-aos="zoom-in" data-aos-delay="200">
             <img
@@ -20,7 +15,7 @@ const ProductSection = () => {
           </div>
 
           {/* Right Content */}
-          <div data-aos="zoom-in" data-aos-delay="300">
+          <div data-aos="fade-left" data-aos-delay="300">
             <h3 className="text-xl md:text-2xl font-semibold mb-4 text-gray-900">
               PRODUCT - Income Generation Loan (Abhimanini)
             </h3>
@@ -40,11 +35,10 @@ const ProductSection = () => {
               Know More
             </Link>
           </div>
-
         </div>
       </div>
     </section>
   );
 };
 
-export  {ProductSection}
+export { ProductSection };

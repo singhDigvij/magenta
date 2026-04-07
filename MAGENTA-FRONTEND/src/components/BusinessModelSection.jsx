@@ -3,17 +3,11 @@ import { FaWrench, FaBook, FaFlag, FaCog } from "react-icons/fa";
 
 const BusinessModelSection = () => {
   return (
-    <section
-      className="py-20"
-      data-aos="zoom-in"
-      data-aos-duration="1000"
-    >
+    <section className="py-20">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 items-center gap-10">
-
           {/* ================= LEFT CONTENT ================= */}
           <div data-aos="zoom-in" data-aos-delay="200">
-            
             {/* Heading */}
             <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-gray-900">
               Business Model
@@ -25,7 +19,6 @@ const BusinessModelSection = () => {
 
             {/* Features Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-
               <div className="flex items-start gap-4">
                 <div className="bg-pink-600 text-white p-3 rounded-full">
                   <FaWrench size={14} />
@@ -61,7 +54,6 @@ const BusinessModelSection = () => {
                   Periodic Collection Online and Offline
                 </p>
               </div>
-
             </div>
 
             {/* Button */}
@@ -74,14 +66,13 @@ const BusinessModelSection = () => {
           </div>
 
           {/* ================= RIGHT IMAGE ================= */}
-          <div data-aos="zoom-in" data-aos-delay="300">
+          <div data-aos="fade-left" data-aos-delay="400">
             <img
-              src="/assets/images/businessmodel/businessmodel1.jpg" 
+              src="/assets/images/businessmodel/businessmodel1.jpg"
               alt="Business Model"
               className="w-full h-auto rounded-lg object-cover"
             />
           </div>
-
         </div>
       </div>
     </section>
