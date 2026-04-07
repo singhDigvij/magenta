@@ -1,24 +1,20 @@
 import {
-    FaFacebookF,
-    FaTwitter,
-    FaInstagram,
-    FaMapMarkerAlt,
-    FaPhoneAlt,
-    FaEnvelope } from "react-icons/fa";
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaEnvelope,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
     <footer className="bg-black text-gray-300 pt-12 pb-6">
-      
       {/* Top Section */}
       <div className="container mx-auto px-4">
-        
         {/* Top Row */}
         <div className="flex flex-col md:flex-row justify-between items-center border-b border-gray-700 pb-6 mb-8">
-          
-          <h2 className="text-lg font-semibold text-white">
-            Magenta Finance
-          </h2>
+          <h2 className="text-lg font-semibold text-white">Magenta Finance</h2>
 
           <img
             src="/assets/images/logo.png"
@@ -44,15 +40,16 @@ const Footer = () => {
 
         {/* Middle Section */}
         <div className="grid md:grid-cols-3 gap-8">
-
           {/* About */}
           <div>
             <h3 className="text-white font-semibold mb-4">ABOUT US</h3>
             <p className="text-sm leading-relaxed text-gray-400">
-              MFSPL is a member of Microfinance Institutions Network (MFIN)
-              which is a Self-Regulatory Organization. The members follow a
-              standard conduct in procedures and processes that promotes ethical
-              business and builds trust among investors and borrowers.
+              Magenta is a member of the Microfinance Institutions Network
+              (MFIN) and Sa-Dhan, which are Self-Regulatory Organizations
+              recognized by the RBI to oversee MFIs. The members of SROs follow
+              a standard conduct in procedures and processes that help promote
+              an ethical way of doing business and bring the confidence of
+              investors and borrowers in the member company.
             </p>
           </div>
 
@@ -78,7 +75,6 @@ const Footer = () => {
             <h3 className="text-white font-semibold mb-4">CONTACT INFO</h3>
 
             <div className="space-y-4 text-sm">
-
               {/* Address */}
               <div className="flex items-start gap-3">
                 <FaMapMarkerAlt className="text-[#d63384] mt-1" />
@@ -119,17 +115,14 @@ const Footer = () => {
                   1800-1020-638
                 </a>
               </div>
-
             </div>
           </div>
-
         </div>
 
         {/* Bottom */}
         <div className="border-t border-gray-700 mt-10 pt-4 text-center text-sm text-gray-500">
           © 2026 Magenta Finance. All rights reserved.
         </div>
-
       </div>
     </footer>
   );

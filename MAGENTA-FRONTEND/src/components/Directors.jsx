@@ -18,17 +18,17 @@ const directorsData = [
   },
   {
     name: "Kim Peter Hansen",
-    role: "Director",
+    role: "Non-Executive Director",
     image: "/assets/images/directors/kim-peter.jpg",
   },
   {
-    name: "Asok Kumar Rathnam",
+    name: "AsokKumar Rathnam",
     role: "Independent Director",
     image: "/assets/images/directors/asok-kumar.jpg",
   },
   {
     name: "Tribikram Nayak",
-    role: "Director",
+    role: "Non-Executive Director",
     image: "/assets/images/directors/tribikram.jpg",
   },
 ];

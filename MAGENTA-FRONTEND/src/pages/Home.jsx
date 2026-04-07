@@ -2,7 +2,7 @@ import { HeroSlider } from "../components/HeroSlider.jsx";
 import { AboutSection } from "../components/AboutSection.jsx";
 import { ProductSection } from "../components/ProductsSection.jsx";
 import { BusinessModelSection } from "../components/BusinessModelSection.jsx";
-import { OperationSection } from "../components/OperationSection.jsx";
+// import { OperationSection } from "../components/OperationSection.jsx";
 import { Counter } from "../components/Counter.jsx";
 import { Directors } from "../components/Directors.jsx";
 import { InfoSection } from "../components/InfoSection.jsx";
@@ -20,7 +20,7 @@ const Home = () => {
       <AboutSection/>
       <ProductSection/>
       <BusinessModelSection/>
-      <OperationSection/>
+      {/* <OperationSection/> */}
       <Counter/>
       <Directors/>
       <InfoSection/>

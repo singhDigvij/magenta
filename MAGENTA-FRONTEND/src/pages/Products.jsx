@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { FaCheckCircle } from "react-icons/fa";
 
 const Products = () => {
   return (
@@ -34,115 +33,134 @@ const Products = () => {
         </div>
       </section>
 
-      {/* ================= FEATURES SECTION ================= */}
+      {/* ================= PRODUCTS TABLE SECTION ================= */}
       <section
-        className="relative py-20 mt-16 bg-white overflow-hidden"
+        className="relative py-20 mt-16 bg-gray-50 overflow-hidden"
         data-aos="zoom-in"
         data-aos-delay="200"
         data-aos-duration="1000"
         data-aos-offset="300"
       >
+        {/* Background Image (LIGHT FADE) */}
         <div
-          className="absolute top-0 left-0 w-full h-200 bg-cover bg-center opacity-60"
+          className="absolute top-0 left-0 w-full h-full bg-cover bg-center opacity-10"
           style={{
             backgroundImage:
               "url(/assets/images/productssection/products2.jpg)",
           }}
         ></div>
 
-        <div className="relative container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            {/* Heading */}
-            <h2
-              className="text-2xl md:text-3xl uppercase font-semibold mb-8"
-              style={{ color: "#d63384" }}
+        <div className="relative max-w-7xl mx-auto px-4">
+          {/* Heading */}
+          <h2 className="text-2xl md:text-3xl font-semibold text-center mb-12 text-gray-800">
+            Features of our products
+          </h2>
+
+          {/* Table */}
+          <div className="overflow-x-auto shadow-xl rounded-xl border border-gray-200 bg-white">
+            <table className="w-full border-collapse">
+
+              {/* Header */}
+              <thead className="bg-gray-200 text-gray-800">
+                <tr>
+                  <th className="p-4 border text-center">Name</th>
+                  <th className="p-4 border text-center">Customer Profile</th>
+                  <th className="p-4 border text-center">Loan Size</th>
+                  <th className="p-4 border text-center">Loan Tenure</th>
+                  <th className="p-4 border text-center">Rate of Interest</th>
+                </tr>
+              </thead>
+
+              {/* Body */}
+              <tbody className="text-gray-700">
+
+                {/* Row 1 */}
+                <tr>
+                  <td className="p-4 border font-semibold align-middle text-left">
+                    Abhimanini Microfinance Loan
+                  </td>
+                  <td className="p-4 border leading-relaxed align-top">
+                    The Abhimanini microfinance loan supports income-generation
+                    activities for women in rural and semi-urban areas. It
+                    enables them to initiate or expand businesses, such as
+                    farming, livestock rearing, handicrafts, or small-scale trading.
+                  </td>
+                  <td className="p-4 border align-middle">
+                    INR 20,000 to 70,000
+                  </td>
+                  <td className="p-4 border align-middle">
+                    12 to 24 months
+                  </td>
+                  <td className="p-4 border align-middle">
+                    25.50 %
+                  </td>
+                </tr>
+
+                {/* Row 2 */}
+                <tr className="bg-gray-50">
+                  <td className="p-4 border font-semibold align-middle text-left">
+                    WASH Microfinance Loan: "Sanitation Prosperity Blessings"
+                  </td>
+                  <td className="p-4 border leading-relaxed align-top">
+                    The WASH microfinance loan focuses on financing toilet
+                    construction and repair to improve sanitation facilities in
+                    rural households.
+                  </td>
+                  <td className="p-4 border align-middle">
+                    INR 20,000 to 70,000
+                  </td>
+                  <td className="p-4 border align-middle">
+                    18 to 24 months
+                  </td>
+                  <td className="p-4 border align-middle">
+                    25.50 %
+                  </td>
+                </tr>
+
+                {/* Row 3 */}
+                <tr>
+                  <td className="p-4 border font-semibold align-middle text-left">
+                    Green Product Loan (Biodigester)
+                  </td>
+                  <td className="p-4 border leading-relaxed align-top">
+                    The <b>Biodigester Loan</b>  is designed to finance the purchase and
+                    installation of <b>biodigesters</b>, which convert organic waste
+                    (animal dung, food waste, etc.) into <b>biogas</b> (a clean cooking
+                    fuel) and <b>organic manure</b> (a nutrient-rich fertilizer).
+                    <br /><br />
+                    Additionally, this loan helps women <b>save money on fuel
+                    expenses</b>, enabling them to <b>create small savings</b> that benefit
+                    their families.
+                    <br /><br />
+                    This product not only supports financial well-being but also
+                    has a <b>positive environmental impact</b> by reducing waste,
+                    lowering carbon emissions, and promoting sustainable
+                    agricultural practices.
+                  </td>
+                  <td className="p-4 border align-middle">
+                    INR 25,000 to 50,000
+                  </td>
+                  <td className="p-4 border align-middle">
+                    18 to 24 months
+                  </td>
+                  <td className="p-4 border align-middle">
+                    25.50 %
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+          {/* Button */}
+          <div className="mt-12 flex justify-center">
+            <Link
+              to="/products"
+              className="bg-pink-600 text-white px-6 py-3 rounded-md font-medium 
+              hover:bg-pink-700 transition duration-300 hover:scale-105"
             >
-              Features of Our Products
-            </h2>
-
-            {/* List */}
-            <ul className="text-gray-800 space-y-4 text-left">
-              <li className="flex items-start gap-3">
-                <FaCheckCircle className="text-pink-600 w-4 h-4 mt-1 shrink-0" />
-                <span>
-                  MFSPL offers small loans to women in between ₹ 20,000 to ₹
-                  50,000 to provide support for income generation activities as
-                  per RBI Guidelines. It operates on Joint Liability Group (JLG)
-                  lending model wherein a group of individual women come
-                  together to borrow from MFSPL. They share responsibilities and
-                  guarantee each other’s loans. Each group comprises of 8 -10
-                  female members. Loans are not usually offered for housing or
-                  personal consumption.
-                </span>
-              </li>
-
-              <li className="flex items-start gap-3">
-                <FaCheckCircle className="text-pink-600 w-4 h-4 mt-1 shrink-0" />
-                <span>
-                  MFSPL is a member of four credit bureaus Equifax, CIBIL, CRIF
-                  Highmark and Experian
-                </span>
-              </li>
-
-              <li className="flex items-start gap-3">
-                <FaCheckCircle className="text-pink-600 w-4 h-4 mt-1 shrink-0" />
-                <span>
-                  Poor downtrodden women with family income of ₹ 1,00,000 p.a.
-                  in rural & ₹ 1,60,000 p.a. in urban areas are the set
-                  standards for being eligible for loans.
-                </span>
-              </li>
-
-              <li className="flex items-start gap-3">
-                <FaCheckCircle className="text-pink-600 w-4 h-4 mt-1 shrink-0" />
-                <span>
-                  The typical JLG customers are economically backward unskilled
-                  women in the age group of 18 – 58 years who have no source of
-                  regular income/ employment and are deprived of any kind of
-                  financial assistance by the Banks. The target customers are
-                  those who are able and willing to engage themselves in some
-                  income generating activities which would bring in some income
-                  to sustain their family and repay the instalments.
-                </span>
-              </li>
-
-              <li className="flex items-start gap-3">
-                <FaCheckCircle className="text-pink-600 w-4 h-4 mt-1 shrink-0" />
-                <span>
-                  Under its own portfolio, presently MFSPL offers only one loan
-                  product of amount ranging from ₹ 20,000 to ₹ 50,000 with
-                  tenure of 12 months to 24 months and with repayment cycle of
-                  28 days
-                </span>
-              </li>
-
-              <li className="flex items-start gap-3">
-                <FaCheckCircle className="text-pink-600 w-4 h-4 mt-1 shrink-0" />
-                <span>
-                  MFSPL offers loans for various activities like income
-                  generation, agriculture allied and nonfarm activities.
-                </span>
-              </li>
-
-              <li className="flex items-start gap-3">
-                <FaCheckCircle className="text-pink-600 w-4 h-4 mt-1 shrink-0" />
-                <span>
-                  Company has tie up with Pramerica Life Insurance Limited for
-                  providing insurance solutions to the customers
-                </span>
-              </li>
-            </ul>
-
-            {/* Button */}
-            <div className="mt-10 flex justify-center">
-              <Link
-                to="/products"
-                className="bg-pink-600 text-white px-6 py-3 rounded-md font-medium 
-               hover:bg-pink-700 transition duration-300 hover:scale-105"
-              >
-                Coming up with new products
-              </Link>
-            </div>
+              Coming up with new products
+            </Link>
           </div>
         </div>
       </section>

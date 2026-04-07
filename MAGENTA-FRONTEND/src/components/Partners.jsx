@@ -41,21 +41,21 @@ const Partners = () => {
               <td className="py-3">EQUIFAX</td>
               <td className="py-3 font-medium">GULAB UNITY TRUST</td>
               <td className="py-3">MFIN</td>
-              <td className="py-3">PREMERICA</td>
+              <td className="py-3">PRAMERICA</td>
             </tr>
 
             <tr className="border-b">
               <td className="py-3">TRANSUNION-CIBIL</td>
               <td className="py-3"></td>
               <td className="py-3">SADHAN</td>
-              <td className="py-3"></td>
+              <td className="py-3">AI-QA HEALTH INSURANCE</td>
             </tr>
 
             <tr>
               <td className="py-3">EXPERIAN</td>
               <td className="py-3"></td>
               <td className="py-3"></td>
-              <td className="py-3"></td>
+              <td className="py-3">HOLISTIC INSURANCE SERVICES</td>
             </tr>
 
           </tbody>

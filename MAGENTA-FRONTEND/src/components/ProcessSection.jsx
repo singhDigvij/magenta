@@ -34,17 +34,17 @@ const ProcessSection = () => {
 
         {/* Content */}
         <div className="grid md:grid-cols-2 gap-12 items-center">
-            
           {/* LEFT IMAGE */}
-          <div className="group perspective">
-            <div className="relative w-full h-87.5 transition-transform duration-700 transform-style preserve-3d group-hover:rotate-y-180">
+          <div className="group perspective cursor-pointer">
+            <div className="relative w-full h-105 transition-transform duration-700 transform-style preserve-3d group-hover:rotate-y-180">
               {/* FRONT SIDE (IMAGE) */}
               <div className="absolute inset-0 backface-hidden rounded-lg overflow-hidden">
-                <div className="bg-linear-to-br from-pink-200 via-orange-200 to-pink-300 p-6 h-full">
+                {/* Gradient Wrapper */}
+                <div className="bg-linear-to-br from-pink-200 via-orange-200 to-pink-300 p-4 h-full flex items-center justify-center">
                   <img
-                    src="/assets/images/process/process.jpg"
+                    src="/assets/images/process/process.png"
                     alt="Process"
-                    className="w-full h-full object-cover rounded-md"
+                    className="max-h-full max-w-full object-contain rounded-md shadow-md"
                   />
                 </div>
               </div>

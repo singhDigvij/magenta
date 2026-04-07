@@ -13,10 +13,8 @@ const InfoSection = () => {
 
       {/* Content */}
       <div className="relative max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 pt-24">
-
         {/* Card 1 */}
         <div className="relative bg-pink-600 text-white p-10 rounded-lg text-center shadow-lg">
-
           {/* Floating Quote Icon */}
           <div className="absolute -top-6 left-1/2 -translate-x-1/2">
             <FaQuoteLeft className="text-white text-6xl opacity-90" />
@@ -27,15 +25,13 @@ const InfoSection = () => {
           </h3>
 
           <p className="text-sm leading-relaxed">
-            Private Limited Company registered with RBI as Non-Banking Finance
-            Company NBFC-MFI status. (November 2017) It is a member of
-            Microfinance Institutions Network (MFIN) since Dec.2020
+            Private Limited Company registered with RBI as NBFC-MFI (registered
+            since 10.09.2017). It is a member of the MFIN and Sa-Dhan.
           </p>
         </div>
 
         {/* Card 2 */}
         <div className="relative bg-pink-600 text-white p-10 rounded-lg text-center shadow-lg">
-
           {/* Floating Quote Icon */}
           <div className="absolute -top-6 left-1/2 -translate-x-1/2">
             <FaQuoteLeft className="text-white text-6xl opacity-90" />
@@ -51,7 +47,6 @@ const InfoSection = () => {
             <li>Saharanpur, Chutmalpur (Uttar Pradesh)</li>
           </ul>
         </div>
-
       </div>
     </section>
   );
