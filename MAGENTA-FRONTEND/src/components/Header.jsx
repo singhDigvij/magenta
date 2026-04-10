@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
-  const [aboutOpen, setAboutOpen] = useState(false); // for mobile dropdown
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 shadow bg-white">
@@ -52,9 +53,30 @@ const Header = () => {
               </div>
             </div>
 
-            <Link to="/services" className="hover:text-pink-600">
-              Services
-            </Link>
+            {/* ✅ Services Dropdown (NEW) */}
+            <div className="relative group">
+              <span className="cursor-pointer hover:text-pink-600">
+                Services
+              </span>
+
+              <div className="absolute left-0 top-full h-3 w-full"></div>
+
+              <div className="absolute left-0 top-full w-48 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
+                <Link
+                  to="/businessmodel"
+                  className="block px-4 py-2 hover:bg-pink-50 hover:text-pink-600"
+                >
+                  Our Business Model
+                </Link>
+                <Link
+                  to="/products"
+                  className="block px-4 py-2 hover:bg-pink-50 hover:text-pink-600"
+                >
+                  Our Products
+                </Link>
+              </div>
+            </div>
+
             <Link to="/downloads" className="hover:text-pink-600">
               Downloads
             </Link>
@@ -131,13 +153,35 @@ const Header = () => {
             )}
           </div>
 
-          <Link
-            to="/services"
-            className="block hover:text-pink-600"
-            onClick={() => setMenuOpen(false)}
-          >
-            Services
-          </Link>
+          {/* ✅ Services Mobile Dropdown (NEW) */}
+          <div>
+            <button
+              onClick={() => setServicesOpen(!servicesOpen)}
+              className="w-full text-left hover:text-pink-600"
+            >
+              Services
+            </button>
+
+            {servicesOpen && (
+              <div className="ml-4 mt-2 space-y-2">
+                <Link
+                  to="/businessmodel"
+                  className="block hover:text-pink-600"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Our Business Model
+                </Link>
+                <Link
+                  to="/products"
+                  className="block hover:text-pink-600"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Our Products
+                </Link>
+              </div>
+            )}
+          </div>
+
           <Link
             to="/downloads"
             className="block hover:text-pink-600"

@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header } from "./components/Header.jsx";
 import { Footer } from "./components/Footer.jsx";
-// import { ScrollToTop } from "./components/ScrollToTop.jsx";
+import { ScrollToTop } from "./components/ScrollToTop.jsx";
 
 // Pages (create these)
 import { Home } from "./pages/Home.jsx";
@@ -31,14 +31,14 @@ function App() {
       delay: 0,
     });
 
-    AOS.refresh(); // 🔥 IMPORTANT
+    AOS.refresh();
   }, []);
 
   return (
     <BrowserRouter>
       <div className="flex flex-col min-h-screen">
         <Header />
-        {/* <ScrollToTop /> */}
+        <ScrollToTop />
         {/* Main Content */}
         <div className="grow">
           <Routes>

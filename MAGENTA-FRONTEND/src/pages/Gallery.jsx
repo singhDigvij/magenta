@@ -1,17 +1,36 @@
+import { Link } from "react-router-dom";
+
 const Gallery = () => {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center bg-white text-center px-4">
-      
-      <h1 className="text-3xl md:text-5xl font-semibold text-gray-800 mb-4">
-        Coming Soon
-        <span className="text-pink-600">...</span>
-      </h1>
+    <>
+      {/* ================= HERO / BANNER ================= */}
+      <section
+        className="relative h-[80vh] flex items-center justify-center text-center"
+        style={{
+          backgroundImage: "url(/assets/images/gallery/gallery1.jpg)", 
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/50"></div>
 
-      <p className="text-gray-500 text-sm md:text-base max-w-md">
-        We are working on something exciting. Stay tuned!
-      </p>
+        {/* Content */}
+        <div className="relative z-10 text-white">
+          <h1 className="text-4xl md:text-5xl font-semibold mb-4">Gallery</h1>
 
-    </section>
+          <p className="text-md md:text-base">
+            <Link to="/" className="opacity-80 hover:text-pink-400 transition">
+              Home
+            </Link>
+
+            <span className="mx-2">{">"}</span>
+
+            <span className="text-pink-400">Gallery</span>
+          </p>
+        </div>
+      </section>
+    </>
   );
 };
 

@@ -8,6 +8,10 @@ import {
   FaQuestionCircle,
   FaUsers,
   FaCogs,
+  FaStar,
+  FaFlag,
+  FaCog,
+  FaCommentDots,
 } from "react-icons/fa";
 
 const About = () => {
@@ -258,6 +262,94 @@ const About = () => {
                   </p>
                 )}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= NELLCOME SECTION ================= */}
+      <section className="grid md:grid-cols-2">
+        {/* LEFT IMAGE */}
+        <div className="h-100 md:h-auto">
+          <img
+            src="/assets/images/about/about8.jpg"
+            alt="nellcome"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* RIGHT CONTENT */}
+        <div className="bg-black text-white px-8 md:px-16 py-20 flex flex-col justify-center">
+          {/* HEADING */}
+          <h2
+            className="text-3xl md:text-4xl font-semibold mb-12"
+            data-aos="zoom-in"
+          >
+            Nellcome Ltd, Holding Company
+          </h2>
+
+          {/* CONTENT GRID */}
+          <div className="grid md:grid-cols-2 gap-10">
+            {/* WE ARE */}
+            <div data-aos="fade-up">
+              <div className="flex items-center gap-3 mb-3">
+                <FaCog className="text-pink-500 text-lg" />
+                <h4 className="text-lg font-semibold">We are</h4>
+              </div>
+              <p className="text-base text-gray-300 leading-relaxed">
+                Nellcome Ltd. is the holding company, established in 25th
+                January 1995 at Isle of Man, Europe.
+              </p>
+            </div>
+
+            {/* OUR MISSION */}
+            <div data-aos="fade-up" data-aos-delay="100">
+              <div className="flex items-center gap-3 mb-3">
+                <FaStar className="text-pink-500 text-lg" />
+                <h4 className="text-lg font-semibold">Our Mission</h4>
+              </div>
+              <p className="text-base text-gray-300 leading-relaxed">
+                The Group is committed to socially responsible and
+                environmentally-friendly business activities throughout its
+                operations.
+              </p>
+            </div>
+
+            {/* OUR APPROACH */}
+            <div data-aos="fade-up" data-aos-delay="200">
+              <div className="flex items-center gap-3 mb-3">
+                <FaFlag className="text-pink-500 text-lg" />
+                <h4 className="text-lg font-semibold">Our Approach</h4>
+              </div>
+              <p className="text-base text-gray-300 leading-relaxed">
+                The company is interested in all kinds of businesses and has
+                invested across countries in several entities which have been
+                working in the domain of second-hand clothes selling business
+                along with the sourcing and selling of solar panels.{" "}
+                <a
+                  href="https://nellcome.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 underline hover:text-blue-300"
+                >
+                  Website
+                </a>
+              </p>
+            </div>
+
+            {/* OUR SOLUTIONS */}
+            <div data-aos="fade-up" data-aos-delay="300">
+              <div className="flex items-center gap-3 mb-3">
+                <FaCommentDots className="text-pink-500 text-lg" />
+                <h4 className="text-lg font-semibold">Our Solutions</h4>
+              </div>
+              <p className="text-base text-gray-300 leading-relaxed">
+                The main business line today is the importing, sorting and
+                selling of Second-Hand Clothes. Second Hand Clothes Business add
+                value to clothes that would otherwise end up as waste. The main
+                products during the past few years have been machinery and
+                equipment for sorting of Second-Hand Clothes and Solar Panels.
+              </p>
             </div>
           </div>
         </div>

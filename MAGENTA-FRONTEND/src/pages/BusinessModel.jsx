@@ -15,79 +15,82 @@ const BusinessModel = () => {
     },
     {
       title: "Credit Bureau",
-      content:
-        "Equifax/Highmark or others.",
+      content: "CRIF-HIGHMARK, EQUIFAX, TRANSUNION-CIBIL AND EXPERIAN.",
     },
     {
-      title: "Eligibility Criteria of Credit Bureau",
-      content:
-        "Not more than 1 NBFC-MFI lending Loan outstanding not exceed 1,00,000 No overdue of any NBFC-MFI/Bank.",
+      title: "Eligibility Criteria",
+      content: `1.	The maximum number of microfinance lenders (including all REs) is to be capped at 3 
+                2.	 The client indebtedness (loan outstanding including the loan under consideration) cannot exceed Rs 2 Lac from microfinance and unsecured retail loans.
+                3.	Any Microfinance provider should not disburse a loan to a borrower who has a DPD >60 days on any loan that has an amount outstanding of greater than Rs 3,000 with any regulated entity (RE) at the time of underwriting the loan under consideration.
+`,
     },
     {
       title: "Maximum Household Annual Income",
-      content: "Rural Areas – 1,00,000, Urban & semi urban Areas – 1,60,000.",
+      content: "Household income up to 3,00,000.",
     },
-     {
+    {
       title: "Loan Size",
-      content: "Rs. 20,000/- to Rs. 30,000/- (First Cycle) Up to 50,000/- (Second Cycle).",
+      content: "Rs. 20,000/- to 70,000/- (according to credibility).",
     },
-     {
+    {
       title: "Interest Rate",
-      content: "As per RBI guideline.",
+      content: "As per the Board approved Pricing Policy.",
     },
-     {
+    {
       title: "Loan Processing fee",
-      content: "1% of the loan amount + GST.",
+      content: "1.50% of the loan amount + GST.",
     },
-     {
-      title: "Insurance fee",
-      content: "As per policy.",
+    {
+      title: "Insurance Charges (Credit Life Insurance)",
+      content: "Actual Basis.",
     },
-     {
+    {
       title: "Loan tenure",
-      content: "12 Months (Loans up to Rs. 30,000) and for above Rs. 30,000/-24 Months.",
+      content: "12 Months to 24 Months.",
     },
-     {
+    {
       title: "Instalments Days",
       content: "28 Days.",
     },
-     {
+    {
       title: "Insurance coverage",
       content: "Member and her nominee during loan tenure.",
     },
-     {
+    {
       title: "JLG formation",
       content: "5-8 members.",
     },
-     {
+    {
       title: "Center Meeting Formation",
       content: "Minimum 10 members.",
     },
-     {
+    {
       title: "Trainings for group",
-      content: "3 Day CGT and 1 Day GRT, CGT stands for Compulsory Group Training and GRT stands for Group Recognition Test.",
+      content:
+        "3 Day CGT and 1 Day GRT, CGT stands for Compulsory Group Training and GRT stands for Group Recognition Test.",
     },
-     {
+    {
       title: "Field Staff Household Visits for group",
       content: "100% household verification of members.",
     },
-     {
+    {
       title: "Pre-Closer",
       content: "Allowed without any penalty and interest.",
     },
-     {
-      title: "Delayed Payment",
-      content: "Penality as per RBI Guidelines.",
+    {
+      title: "Penal Charges",
+      content: "Penal charges as per RBI Guidelines.",
     },
-     {
+    {
       title: "Disbursements",
-      content: "Non cash mode and in special cases cash disbursement is allowed after prior approval of MD/CEO/ person nominated by MD.",
+      content:
+        "Non cash mode and in special cases cash disbursement is allowed after prior approval of MD/CEO/ person nominated by MD.",
     },
-     {
+    {
       title: "Collection Process",
-      content: "Centre deposit their repayment to field executive.",
+      content: "Centre deposit their repayment to Field leader.",
     },
-     {
+    {
       title: "Radius of branch operation",
       content: "20 KM (for above approval will be taken from COO/MD).",
     },
@@ -134,23 +137,53 @@ const BusinessModel = () => {
       <section className="py-20 bg-gray-100">
         <div className="container mx-auto px-4 w-full">
           {/* Heading */}
-          <div className="text-center mb-12 max-w-4xl mx-auto">
+          <div
+            className="text-center mb-12 max-w-4xl mx-auto"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             <h2 className="text-2xl md:text-3xl font-semibold">
-              Our Business Model<span className="text-pink-600">.</span>
+              Our Business Model{" "}
+              <span className="w-2 h-2 bg-pink-600 rounded-full inline-block"></span>
             </h2>
 
             <div className="w-10 h-0.5 bg-gray-400 mx-auto mt-4 mb-6"></div>
 
             <p className="text-gray-600 leading-relaxed">
-              We work with women from rural and semi-urban areas...
+              We work with women from rural and semi-urban areas, focusing on
+              those who are unable to access the formal banking system. Our goal
+              is to empower these women by providing financial support in the
+              form of small loans, enabling them to start or expand simple
+              businesses and improve their household income. By fostering
+              entrepreneurship and self-reliance, we help create sustainable
+              livelihoods, uplift families, and contribute to the economic
+              development of their communities.
             </p>
           </div>
 
+          {/* ================= BUSINESS MODEL IMAGE ================= */}
+          <div
+            className="max-w-7xl mx-auto mb-12"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+            data-aos-duration="1000"
+          >
+            <img
+              src="/assets/images/businessmodel/business3.jpg"
+              alt="Business Model Process"
+              className="w-full h-auto rounded-lg shadow-md"
+            />
+          </div>
+
           {/* Process Label */}
-          <div className="flex items-center justify-center mb-8">
-            <div className="h-px bg-gray-300 w-20"></div>
-            <span className="mx-4 text-sm text-gray-500">Process</span>
-            <div className="h-px bg-gray-300 w-20"></div>
+          <div className="flex items-center justify-center mb-8 w-full">
+            <div className="h-px bg-gray-300 flex-1"></div>
+
+            <span className="mx-4 text-2xl text-gray-950 whitespace-nowrap">
+              Process
+            </span>
+
+            <div className="h-px bg-gray-300 flex-1"></div>
           </div>
 
           {/* Accordion */}
@@ -160,7 +193,6 @@ const BusinessModel = () => {
                 key={index}
                 className="border border-gray-300 rounded-md overflow-hidden shadow-sm"
               >
-                {/* Header */}
                 <div
                   onClick={() => toggleAccordion(index)}
                   className={`px-6 py-4 cursor-pointer flex justify-between items-center transition 
@@ -174,9 +206,8 @@ const BusinessModel = () => {
                   <span>{activeIndex === index ? "-" : "+"}</span>
                 </div>
 
-                {/* Content */}
                 {activeIndex === index && (
-                  <div className="px-6 py-4 bg-white text-gray-600">
+                  <div className="px-6 py-4 bg-white text-gray-600 whitespace-pre-line leading-relaxed">
                     {item.content}
                   </div>
                 )}
