@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import { connectDB } from "./connect/connection.js";
 import counterRoute from "./routes/counterRoute.js";
 import policyRoute from "./routes/policyRoute.js";
+import galleryRoute from "./routes/galleryRoute.js";
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.use(express.json());
 // Load routes
 app.use("/api/counter", counterRoute);
 app.use("/api/policies", policyRoute);
+app.use("/api/gallery", galleryRoute);
 
 // ✅ Async server starter
 const startServer = async () => {
