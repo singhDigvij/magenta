@@ -16,6 +16,7 @@ import { Gallery } from "./pages/Gallery.jsx";
 import { Services } from "./pages/Services.jsx";
 import { Downloads } from "./pages/Downloads.jsx";
 import { Policies } from "./pages/Policies.jsx";
+import { AdminDashboard } from "./pages/AdminDashboard.jsx";
 // import { Operation } from "./pages/Operation.jsx";
 
 // import { Services } from "./pages/Services.jsx";
@@ -51,6 +52,7 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/downloads" element={<Downloads />} />
             <Route path="/policies" element={<Policies />} />
+            <Route path="/admin-dashboard" element={<AdminDashboard />} />
             {/* <Route path="/operations" element={<Operation />} /> */}
           </Routes>
         </div>

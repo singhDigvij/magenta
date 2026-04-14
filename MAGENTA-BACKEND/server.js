@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { connectDB } from "./connect/connection.js";
 import counterRoute from "./routes/counterRoute.js";
+import policyRoute from "./routes/policyRoute.js";
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ app.use(express.json());
 
 // Load routes
 app.use("/api/counter", counterRoute);
+app.use("/api/policies", policyRoute);
 
 // ✅ Async server starter
 const startServer = async () => {

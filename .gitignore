@@ -17,3 +17,5 @@ logs
 
 # editor
 .vscode/
+
+/uploads
