@@ -6,8 +6,28 @@ import {
   FaPhoneAlt,
   FaEnvelope,
 } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { fetchNewsletters } from "../api/newsletterApi";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const [newsletters, setNewsletters] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const load = async () => {
+      const res = await fetchNewsletters();
+      if (res.success) setNewsletters(res.newsletters);
+    };
+
+    load();
+
+    // 🔥 Auto refresh every 2 seconds
+    const interval = setInterval(load, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <footer className="bg-black text-gray-300 pt-12 pb-6">
       {/* Top Section */}
@@ -58,15 +78,15 @@ const Footer = () => {
             <h3 className="text-white font-semibold mb-4">LATEST NEWS</h3>
 
             <div className="space-y-3 text-sm">
-              <p className="hover:text-[#d63384] cursor-pointer">
-                New Branch open in Chutmalpur
-              </p>
-              <p className="hover:text-[#d63384] cursor-pointer">
-                New Branch open in Saharanpur
-              </p>
-              <p className="hover:text-[#d63384] cursor-pointer">
-                New Year 2023 Celebration
-              </p>
+              {newsletters.slice(0, 3).map((n) => (
+                <p
+                  key={n._id}
+                  onClick={() => navigate(`/newsletter/${n._id}`)}
+                  className="hover:text-[#d63384] cursor-pointer"
+                >
+                  {n.title}
+                </p>
+              ))}
             </div>
           </div>
 

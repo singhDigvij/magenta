@@ -15,8 +15,10 @@ import { BusinessModel } from "./pages/BusinessModel.jsx";
 import { Gallery } from "./pages/Gallery.jsx";
 import { Services } from "./pages/Services.jsx";
 import { Downloads } from "./pages/Downloads.jsx";
-import { Policies } from "./pages/Policies.jsx";
+import { Newsletter } from "./pages/Newsletter.jsx";
+import { NewsletterDetail } from "./pages/NewsletterDetail.jsx";
 import { AdminDashboard } from "./pages/AdminDashboard.jsx";
+
 // import { Operation } from "./pages/Operation.jsx";
 
 // import { Services } from "./pages/Services.jsx";
@@ -51,8 +53,9 @@ function App() {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/services" element={<Services />} />
             <Route path="/downloads" element={<Downloads />} />
-            <Route path="/policies" element={<Policies />} />
+            <Route path="/newsletter" element={<Newsletter />} />
             <Route path="/admin-dashboard" element={<AdminDashboard />} />
+            <Route path="/newsletter/:id" element={<NewsletterDetail />} />
             {/* <Route path="/operations" element={<Operation />} /> */}
           </Routes>
         </div>

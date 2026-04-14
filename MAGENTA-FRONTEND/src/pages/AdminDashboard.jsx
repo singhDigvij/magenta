@@ -9,6 +9,11 @@ import {
   createImageApi,
   deleteImageApi,
 } from "../api/galleryApi.js";
+import {
+  fetchNewsletters,
+  createNewsletterApi,
+  deleteNewsletterApi,
+} from "../api/newsletterApi.js";
 
 const AdminDashboard = () => {
   const [policies, setPolicies] = useState([]);
@@ -18,6 +23,12 @@ const AdminDashboard = () => {
   const [images, setImages] = useState([]);
   const [imgTitle, setImgTitle] = useState("");
   const [imgFile, setImgFile] = useState(null);
+
+  const [newsletters, setNewsletters] = useState([]);
+  const [newsTitle, setNewsTitle] = useState("");
+  const [newsContent, setNewsContent] = useState("");
+  const [newsDate, setNewsDate] = useState("");
+  const [newsAuthor, setNewsAuthor] = useState("");
 
   // 🔹 Load policies
   const loadPolicies = async () => {
@@ -35,15 +46,22 @@ const AdminDashboard = () => {
     }
   };
 
+  // 🔹 Load newsletter
+  const loadNewsletters = async () => {
+    const res = await fetchNewsletters();
+    if (res.success) setNewsletters(res.newsletters);
+  };
+
   useEffect(() => {
     loadPolicies();
     loadImages();
+    loadNewsletters();
   }, []);
 
   // 🔹 Add Policy
   const handleSubmit = async () => {
     if (!title || !file) {
-      alert("Please enter title and select file");
+      alert("Enter all fields");
       return;
     }
 
@@ -65,8 +83,12 @@ const AdminDashboard = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this policy?")) return;
 
-    await deletePolicyApi(id);
-    loadPolicies();
+    const res = await deletePolicyApi(id);
+
+    if (res.success) {
+      alert("🗑️ Policy deleted successfully");
+      loadPolicies();
+    }
   };
 
   // 🔹 Add Image
@@ -94,14 +116,53 @@ const AdminDashboard = () => {
   const handleImageDelete = async (id) => {
     if (!window.confirm("Delete this image?")) return;
 
-    await deleteImageApi(id);
-    loadImages();
+    const res = await deleteImageApi(id);
+
+    if (res.success) {
+      alert("🗑️ Image deleted successfully");
+      loadImages();
+    }
+  };
+
+  // 🔹 Add Newsletter
+  const handleNewsSubmit = async () => {
+    if (!newsTitle || !newsContent || !newsDate || !newsAuthor) {
+      alert("Enter all fields");
+      return;
+    }
+
+    const res = await createNewsletterApi({
+      title: newsTitle,
+      content: newsContent,
+      date: newsDate,
+      author: newsAuthor,
+    });
+
+    if (res.success) {
+      alert("✅ Newsletter added successfully");
+      setNewsTitle("");
+      setNewsContent("");
+      setNewsDate("");
+      setNewsAuthor("");
+      loadNewsletters();
+    }
+  };
+
+  // 🔹 Delete Newsletter
+  const handleNewsDelete = async (id) => {
+    if (!window.confirm("Delete this newsletter?")) return;
+
+    const res = await deleteNewsletterApi(id);
+
+    if (res.success) {
+      alert("🗑️ Newsletter deleted successfully");
+      loadNewsletters();
+    }
   };
 
   return (
     <div className="min-h-screen bg-gray-50 py-10">
       <div className="max-w-5xl mx-auto px-4">
-
         {/* 🔷 MAIN TITLE */}
         <h1 className="text-3xl font-bold text-center mb-10">
           Admin Dashboard
@@ -251,6 +312,95 @@ const AdminDashboard = () => {
           </div>
         </div>
 
+        {/* 🔥 DIVIDER */}
+        <div className="border-t border-gray-300 my-16"></div>
+
+        {/* ================= NEWSLETTER SECTION ================= */}
+        <div>
+          <h2 className="text-2xl font-bold mb-6 border-b pb-2">
+            📰 Newsletter Management
+          </h2>
+
+          {/* ➕ ADD NEWSLETTER */}
+          <div className="bg-white p-6 rounded-xl shadow mb-10">
+            <h3 className="text-lg font-semibold mb-4">Add Newsletter</h3>
+
+            <div className="flex flex-col gap-3">
+              <textarea
+                placeholder="Content"
+                value={newsContent}
+                onChange={(e) => setNewsContent(e.target.value)}
+                className="border p-2 rounded w-full"
+                required
+              />
+
+              <input
+                type="text"
+                placeholder="Title"
+                value={newsTitle}
+                onChange={(e) => setNewsTitle(e.target.value)}
+                className="border p-2 rounded w-full"
+                required
+              />
+
+              <input
+                type="text"
+                placeholder="Date"
+                value={newsDate}
+                onChange={(e) => setNewsDate(e.target.value)}
+                className="border p-2 rounded w-full"
+                required
+              />
+
+              <input
+                type="text"
+                placeholder="Author"
+                value={newsAuthor}
+                onChange={(e) => setNewsAuthor(e.target.value)}
+                className="border p-2 rounded w-full"
+                required
+              />
+
+              <button
+                onClick={handleNewsSubmit}
+                className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 cursor-pointer"
+              >
+                Add Newsletter
+              </button>
+            </div>
+          </div>
+
+          {/* 📰 NEWSLETTER LIST */}
+          <div>
+            <h3 className="text-lg font-semibold mb-6">All Newsletters</h3>
+
+            {newsletters.length === 0 ? (
+              <p className="text-gray-500">No newsletters added yet</p>
+            ) : (
+              <div className="grid md:grid-cols-2 gap-6">
+                {newsletters.map((n) => (
+                  <div
+                    key={n._id}
+                    className="bg-white p-4 rounded-xl shadow hover:shadow-lg transition"
+                  >
+                    <h4 className="font-semibold">{n.title}</h4>
+
+                    <p className="text-sm text-gray-500">
+                      {n.date} | {n.author}
+                    </p>
+
+                    <button
+                      onClick={() => handleNewsDelete(n._id)}
+                      className="bg-red-600 text-white px-2 py-1 mt-2 rounded cursor-pointer"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

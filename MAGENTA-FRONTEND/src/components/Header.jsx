@@ -80,8 +80,8 @@ const Header = () => {
             <Link to="/downloads" className="hover:text-pink-600">
               Downloads
             </Link>
-            <Link to="/policies" className="hover:text-pink-600">
-              Policies
+            <Link to="/newsletter" className="hover:text-pink-600">
+              Newsletter
             </Link>
 
             {/* MIS Login */}
@@ -190,11 +190,11 @@ const Header = () => {
             Downloads
           </Link>
           <Link
-            to="/policies"
+            to="/newsletter"
             className="block hover:text-pink-600"
             onClick={() => setMenuOpen(false)}
           >
-            Policies
+            Newsletter
           </Link>
 
           {/* <a
