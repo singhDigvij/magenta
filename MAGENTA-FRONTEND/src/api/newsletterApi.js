@@ -13,11 +13,25 @@ export const fetchSingleNewsletter = async (id) => {
 };
 
 export const createNewsletterApi = async (data) => {
-  const res = await axios.post(`${API_URL}/newsletters`, data);
+  const token = localStorage.getItem("adminToken");
+
+  const res = await axios.post(`${API_URL}/newsletters`, data, {
+    headers: {
+      Authorization: token,
+    },
+  });
+
   return res.data;
 };
 
 export const deleteNewsletterApi = async (id) => {
-  const res = await axios.delete(`${API_URL}/newsletters/${id}`);
+  const token = localStorage.getItem("adminToken");
+
+  const res = await axios.delete(`${API_URL}/newsletters/${id}`, {
+    headers: {
+      Authorization: token,
+    },
+  });
+
   return res.data;
 };

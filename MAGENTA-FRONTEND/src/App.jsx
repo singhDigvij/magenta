@@ -18,6 +18,8 @@ import { Downloads } from "./pages/Downloads.jsx";
 import { Newsletter } from "./pages/Newsletter.jsx";
 import { NewsletterDetail } from "./pages/NewsletterDetail.jsx";
 import { AdminDashboard } from "./pages/AdminDashboard.jsx";
+import { AdminLogin } from "./pages/AdminLogin.jsx";
+import { ProtectedRoute } from "./components/ProtectedRoute.jsx";
 
 // import { Operation } from "./pages/Operation.jsx";
 
@@ -54,7 +56,15 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/downloads" element={<Downloads />} />
             <Route path="/newsletter" element={<Newsletter />} />
-            <Route path="/admin-dashboard" element={<AdminDashboard />} />
+            <Route path="/admin-login" element={<AdminLogin />} />
+            <Route
+              path="/admin-dashboard"
+              element={
+                <ProtectedRoute>
+                  <AdminDashboard />
+                </ProtectedRoute>
+              }
+            />
             <Route path="/newsletter/:id" element={<NewsletterDetail />} />
             {/* <Route path="/operations" element={<Operation />} /> */}
           </Routes>

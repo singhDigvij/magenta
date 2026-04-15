@@ -8,11 +8,24 @@ export const fetchImages = async () => {
 };
 
 export const createImageApi = async (formData) => {
-  const res = await axios.post(`${API_URL}/gallery`, formData);
+  const token = localStorage.getItem("adminToken");
+
+  const res = await axios.post(`${API_URL}/gallery`, formData, {
+    headers: {
+      Authorization: token,
+    },
+  });
+
   return res.data;
 };
-
 export const deleteImageApi = async (id) => {
-  const res = await axios.delete(`${API_URL}/gallery/${id}`);
+  const token = localStorage.getItem("adminToken");
+
+  const res = await axios.delete(`${API_URL}/gallery/${id}`, {
+    headers: {
+      Authorization: token,
+    },
+  });
+
   return res.data;
 };

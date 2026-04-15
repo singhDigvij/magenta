@@ -1,12 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 // import { LoanFormModal } from "./LoanFormModal.jsx";
 
 const Header = () => {
+  // ✅ FIX: reactive admin state
+  const [adminName, setAdminName] = useState("");
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+
+  // ✅ Sync with localStorage
+  useEffect(() => {
+    const name = localStorage.getItem("adminName");
+    setAdminName(name);
+  }, []);
+
+  // ✅ Logout handler
+  const handleLogout = () => {
+    localStorage.removeItem("adminToken");
+    localStorage.removeItem("adminName");
+    window.location.href = "/";
+  };
 
   return (
     <header className="sticky top-0 z-50 shadow bg-white">
@@ -33,10 +49,8 @@ const Header = () => {
             <div className="relative group">
               <span className="cursor-pointer hover:text-pink-600">About</span>
 
-              {/* Invisible hover bridge */}
               <div className="absolute left-0 top-full h-3 w-full"></div>
 
-              {/* Dropdown */}
               <div className="absolute left-0 top-full w-40 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
                 <Link
                   to="/about"
@@ -53,7 +67,7 @@ const Header = () => {
               </div>
             </div>
 
-            {/* ✅ Services Dropdown (NEW) */}
+            {/* Services */}
             <div className="relative group">
               <span className="cursor-pointer hover:text-pink-600">
                 Services
@@ -84,15 +98,29 @@ const Header = () => {
               Newsletter
             </Link>
 
-            {/* MIS Login */}
-            {/* <a href="#" className="hover:text-pink-600">
-              MIS Login
-            </a> */}
+            {/* 🔐 ADMIN UI (DESKTOP) */}
+            {adminName ? (
+              <div className="flex items-center gap-3">
+                <span className="text-pink-600 font-semibold">
+                  Hello {adminName}
+                </span>
+
+                <button
+                  onClick={handleLogout}
+                  className="bg-red-500 text-white cursor-pointer px-3 py-1 rounded"
+                >
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <Link to="/admin-login" className="hover:text-pink-600">
+                Login
+              </Link>
+            )}
           </nav>
 
           {/* Right Side */}
           <div className="flex items-center gap-4">
-            {/* Contact Button */}
             <button
               onClick={() => setIsContactOpen(true)}
               className="bg-pink-600 hover:bg-pink-700 cursor-pointer text-white px-4 py-2 text-sm font-semibold rounded transition"
@@ -115,37 +143,39 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="lg:hidden border-t px-4 py-4 space-y-3 bg-white text-sm">
+        <div className="lg:hidden border-t px-4 py-4 bg-white text-sm space-y-4">
+          {/* Links */}
           <Link
             to="/"
-            className="block hover:text-pink-600"
+            className="block py-1 hover:text-pink-600"
             onClick={() => setMenuOpen(false)}
           >
             Home
           </Link>
 
-          {/* Mobile About Dropdown */}
+          {/* About */}
           <div>
             <button
               onClick={() => setAboutOpen(!aboutOpen)}
-              className="w-full text-left hover:text-pink-600"
+              className="w-full text-left py-1 hover:text-pink-600"
             >
               About
             </button>
 
             {aboutOpen && (
-              <div className="ml-4 mt-2 space-y-2">
+              <div className="ml-4 mt-2 flex flex-col gap-2">
                 <Link
                   to="/about"
-                  className="block hover:text-pink-600"
                   onClick={() => setMenuOpen(false)}
+                  className="block py-1 text-gray-600 hover:text-pink-600"
                 >
                   About Us
                 </Link>
+
                 <Link
                   to="/gallery"
-                  className="block hover:text-pink-600"
                   onClick={() => setMenuOpen(false)}
+                  className="block py-1 text-gray-600 hover:text-pink-600"
                 >
                   Gallery
                 </Link>
@@ -153,28 +183,29 @@ const Header = () => {
             )}
           </div>
 
-          {/* ✅ Services Mobile Dropdown (NEW) */}
+          {/* Services */}
           <div>
             <button
               onClick={() => setServicesOpen(!servicesOpen)}
-              className="w-full text-left hover:text-pink-600"
+              className="w-full text-left py-1 hover:text-pink-600"
             >
               Services
             </button>
 
             {servicesOpen && (
-              <div className="ml-4 mt-2 space-y-2">
+              <div className="ml-4 mt-2 flex flex-col gap-2">
                 <Link
                   to="/businessmodel"
-                  className="block hover:text-pink-600"
                   onClick={() => setMenuOpen(false)}
+                  className="block py-1 text-gray-600 hover:text-pink-600"
                 >
                   Our Business Model
                 </Link>
+
                 <Link
                   to="/products"
-                  className="block hover:text-pink-600"
                   onClick={() => setMenuOpen(false)}
+                  className="block py-1 text-gray-600 hover:text-pink-600"
                 >
                   Our Products
                 </Link>
@@ -184,26 +215,42 @@ const Header = () => {
 
           <Link
             to="/downloads"
-            className="block hover:text-pink-600"
+            className="block py-1"
             onClick={() => setMenuOpen(false)}
           >
             Downloads
           </Link>
+
           <Link
             to="/newsletter"
-            className="block hover:text-pink-600"
+            className="block py-1"
             onClick={() => setMenuOpen(false)}
           >
             Newsletter
           </Link>
 
-          {/* <a
-            href="#"
-            className="block hover:text-pink-600"
-            onClick={() => setMenuOpen(false)}
-          >
-            MIS Login
-          </a> */}
+          {/* 🔥 Divider */}
+          <div className="border-t pt-3"></div>
+
+          {/* 🔐 ADMIN UI */}
+          {adminName ? (
+            <div className="flex flex-col gap-3">
+              <span className="text-pink-600 font-semibold">
+                Hello {adminName}
+              </span>
+
+              <button
+                onClick={handleLogout}
+                className="bg-red-500 text-white px-3 py-2 rounded"
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <Link to="/admin-login" className="block py-1">
+              Login
+            </Link>
+          )}
         </div>
       )}
 

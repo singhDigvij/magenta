@@ -5,11 +5,12 @@ import {
   getImages,
   deleteImage,
 } from "../controllers/galleryController.js";
+import { adminAuth } from "../middleware/adminAuth.js";
 
 const router = express.Router();
 
 router.get("/", getImages);
-router.post("/", upload.single("file"), createImage);
-router.delete("/:id", deleteImage);
+router.post("/", adminAuth,  upload.single("file"), createImage);
+router.delete("/:id", adminAuth,  deleteImage);
 
 export default router;

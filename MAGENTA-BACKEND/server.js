@@ -6,6 +6,7 @@ import counterRoute from "./routes/counterRoute.js";
 import policyRoute from "./routes/policyRoute.js";
 import galleryRoute from "./routes/galleryRoute.js";
 import newsletterRoute from "./routes/newsletterRoute.js";
+import adminRoute from "./routes/adminRoute.js";
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.use("/api/counter", counterRoute);
 app.use("/api/policies", policyRoute);
 app.use("/api/gallery", galleryRoute);
 app.use("/api/newsletters", newsletterRoute);
+app.use("/api/admin", adminRoute);
 
 // ✅ Async server starter
 const startServer = async () => {
