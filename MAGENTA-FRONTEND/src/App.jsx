@@ -20,7 +20,7 @@ import { NewsletterDetail } from "./pages/NewsletterDetail.jsx";
 import { AdminDashboard } from "./pages/AdminDashboard.jsx";
 import { AdminLogin } from "./pages/AdminLogin.jsx";
 import { ProtectedRoute } from "./components/ProtectedRoute.jsx";
-
+import { SessionManager } from "./components/SessionManager.jsx";
 // import { Operation } from "./pages/Operation.jsx";
 
 // import { Services } from "./pages/Services.jsx";
@@ -41,6 +41,7 @@ function App() {
 
   return (
     <BrowserRouter>
+    <SessionManager />
       <div className="flex flex-col min-h-screen">
         <Header />
         <ScrollToTop />
