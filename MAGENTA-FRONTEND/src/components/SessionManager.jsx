@@ -22,7 +22,7 @@ const SessionManager = () => {
 
           alert("Session expired. Please login again.");
 
-          navigate("/admin-login");
+          window.location.href = "/admin-login";
         }
       }
     }, 5000); // check every 5 sec
