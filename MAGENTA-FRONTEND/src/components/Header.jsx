@@ -3,11 +3,8 @@ import { Link } from "react-router-dom";
 // import { LoanFormModal } from "./LoanFormModal.jsx";
 
 const Header = () => {
-  // ✅ FIX: reactive admin state
   const [adminName, setAdminName] = useState("");
-
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isContactOpen, setIsContactOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
 
@@ -121,12 +118,12 @@ const Header = () => {
 
           {/* Right Side */}
           <div className="flex items-center gap-4">
-            <button
-              onClick={() => setIsContactOpen(true)}
-              className="bg-pink-600 hover:bg-pink-700 cursor-pointer text-white px-4 py-2 text-sm font-semibold rounded transition"
+            <Link
+              to="/contact"
+              className="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 text-sm font-semibold rounded transition"
             >
               Contact Us
-            </button>
+            </Link>
 
             {/* Mobile Menu Button */}
             <button

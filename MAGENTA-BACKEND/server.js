@@ -7,6 +7,7 @@ import policyRoute from "./routes/policyRoute.js";
 import galleryRoute from "./routes/galleryRoute.js";
 import newsletterRoute from "./routes/newsletterRoute.js";
 import adminRoute from "./routes/adminRoute.js";
+import contactRoute from "./routes/contactRoute.js";
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ app.use("/api/policies", policyRoute);
 app.use("/api/gallery", galleryRoute);
 app.use("/api/newsletters", newsletterRoute);
 app.use("/api/admin", adminRoute);
+app.use("/api/contact", contactRoute);
 
 // ✅ Async server starter
 const startServer = async () => {
