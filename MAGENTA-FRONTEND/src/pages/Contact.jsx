@@ -20,7 +20,12 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.email || !formData.message  || !formData.phone) {
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.message ||
+      !formData.phone
+    ) {
       alert("Please fill required fields");
       return;
     }
@@ -186,6 +191,19 @@ const Contact = () => {
             </div>
           </form>
         </div>
+      </section>
+
+      {/* ================= MAP SECTION ================= */}
+      <section className="w-full h-162.5">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.5098616873497!2d77.15684567450548!3d28.524390788985112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1d55b1277a19%3A0x213e2f85a34e32cd!2sMagenta%20Finance%20Services%20Private%20Limited!5e0!3m2!1sen!2sin!4v1776315605498!5m2!1sen!2sin"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
       </section>
     </>
   );
