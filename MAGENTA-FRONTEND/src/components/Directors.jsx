@@ -100,7 +100,7 @@ const Directors = () => {
                       ].map((Icon, i) => (
                         <a
                           key={i}
-                          href="/home"
+                          href="/"
                           className="bg-white text-pink-600 p-2 rounded-full hover:bg-gray-100 transition cursor-pointer"
                         >
                           <Icon size={14} />

@@ -56,6 +56,12 @@ const Header = () => {
                   About Us
                 </Link>
                 <Link
+                  to="/board"
+                  className="block px-4 py-2 hover:bg-pink-50 hover:text-pink-600"
+                >
+                  About Board Of Directors
+                </Link>
+                <Link
                   to="/gallery"
                   className="block px-4 py-2 hover:bg-pink-50 hover:text-pink-600"
                 >
@@ -167,6 +173,14 @@ const Header = () => {
                   className="block py-1 text-gray-600 hover:text-pink-600"
                 >
                   About Us
+                </Link>
+
+                <Link
+                  to="/board"
+                  onClick={() => setMenuOpen(false)}
+                  className="block py-1 text-gray-600 hover:text-pink-600"
+                >
+                  About Board Of Directors
                 </Link>
 
                 <Link

@@ -22,6 +22,7 @@ import { AdminLogin } from "./pages/AdminLogin.jsx";
 import { ProtectedRoute } from "./components/ProtectedRoute.jsx";
 import { SessionManager } from "./components/SessionManager.jsx";
 import { Contact } from "./pages/Contact.jsx";
+import { Board } from "./pages/BoardDirectors.jsx";
 // import { Operation } from "./pages/Operation.jsx";
 
 // import { Services } from "./pages/Services.jsx";
@@ -60,6 +61,7 @@ function App() {
             <Route path="/newsletter" element={<Newsletter />} />
             <Route path="/admin-login" element={<AdminLogin />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/board" element={<Board />} />
             <Route
               path="/admin-dashboard"
               element={
